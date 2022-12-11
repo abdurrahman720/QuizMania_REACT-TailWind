@@ -1,14 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import { Nav } from './Components/NavBar/NavBar';
+import React from 'react';
+import { router } from './Routes';
+import { RouterProvider } from 'react-router-dom';
 
 
 function App() {
   return (
-    <div >
-    <Nav></Nav>
-    
-    </div>
+   <RouterProvider router={router}></RouterProvider>
   );
 }
 
