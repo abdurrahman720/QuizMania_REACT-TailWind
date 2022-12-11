@@ -2,12 +2,21 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 
-const Quiz = ({ quiz, quizes }) => {
+const Quiz = ({ quiz, quizes, correct, setCorrect }) => {
     const { id, question, options, correctAnswer } = quiz;
-
+    
+    let optionsNew = [];
     const handleClick = (option) => {
-       
+
+        // optionsNew.push(option);
+
         if (option === correctAnswer) {
+            // for (const i in optionsNew) {
+            //     if (optionsNew[i] === correctAnswer) {
+            //         setCorrect(correct);
+            //     }
+            // }
+            setCorrect(correct + 1);
             toast.success('Correct Answer!', {autoClose: 500})
         }
         else {
@@ -16,9 +25,9 @@ const Quiz = ({ quiz, quizes }) => {
     }
 
     const showCorrect = () => {
-        toast.success( correctAnswer , {autoClose:500})
+        toast.info( `Correct answer is: ${correctAnswer}` , {autoClose:500})
     }
-
+    console.log(correct);
 
     return (
         <div className="border text-center p-5 shadow mx-auto my-5 w-3/4 md:w-1/2">
