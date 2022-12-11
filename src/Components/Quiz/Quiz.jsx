@@ -1,33 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 
 const Quiz = ({ quiz, quizes, correct, setCorrect }) => {
     const { id, question, options, correctAnswer } = quiz;
     
-    let optionsNew = [];
-    const handleClick = (option) => {
-
-        // optionsNew.push(option);
-
-        if (option === correctAnswer) {
-            // for (const i in optionsNew) {
-            //     if (optionsNew[i] === correctAnswer) {
-            //         setCorrect(correct);
-            //     }
-            // }
-            setCorrect(correct + 1);
-            toast.success('Correct Answer!', {autoClose: 500})
+    const [selected, setSelected] = useState([])
+   
+    const handleClick = (id, option) => {
+        const exist = selected.find(option => option === id);
+        console.log(exist);
+        if (exist) {
+            toast.error('Multiple attempts is not allowed! Answer the next question!',{autoClose: 800})
         }
         else {
-            toast.error('Wrong Answer!', {autoClose: 500})
+            setSelected([...selected,id])
+            console.log(selected)
+            if (option === correctAnswer) {
+        
+                setCorrect(correct + 1);
+                toast.success('Correct Answer!', {autoClose: 500})
+            }
+            else {
+                toast.error('Wrong Answer!', {autoClose: 500})
+            }
         }
+        
+       
     }
 
     const showCorrect = () => {
         toast.info( `Correct answer is: ${correctAnswer}` , {autoClose:500})
     }
-    console.log(correct);
+   
 
     return (
         <div className="border text-center p-5 shadow mx-auto my-5 w-3/4 md:w-1/2">
@@ -45,7 +50,7 @@ const Quiz = ({ quiz, quizes, correct, setCorrect }) => {
             </div>
             <div className="grid gap-2 md:grid-cols-2  ">
                {
-                    options.map(option => <button key={option.index} onClick={() =>handleClick(option)} className="border p-5 border-cyan-200 hover:bg-sky-700 hover:text-white rounded m-2">
+                    options.map(option => <button key={option.index} onClick={() =>handleClick(id, option)} className="border p-5 border-cyan-200 hover:bg-sky-700 hover:text-white rounded m-2">
                             <div>
                             {option}
                             </div>
