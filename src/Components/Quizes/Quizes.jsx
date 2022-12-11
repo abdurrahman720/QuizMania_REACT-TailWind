@@ -9,7 +9,7 @@ const Quizes = () => {
     const [correct, setCorrect] = useState(0);
 
     return (
-        <div className="flex justify-evenly">
+        <div id="quizes" className="flex justify-evenly">
             <div>
                 <h1 className="text-3xl text-center text-sky-300 font-extrabold">Quiz of {quizesArray.data.name}</h1>
             {

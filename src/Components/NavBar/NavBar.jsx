@@ -38,9 +38,9 @@ export const Nav = () => {
             <li>
               <NavLink
                 to="/topics"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                aria-label="Topics"
+                title="Topics"
+                className={({isActive})=> isActive? "font-medium tracking-wide text-indigo-700 transition-colors duration-200  hover:text-sky-700" : "font-medium tracking-wide text-gray-700 transition-colors duration-200  hover:text-sky-700" }
               >
                Topics
               </NavLink>
@@ -48,9 +48,9 @@ export const Nav = () => {
             <li>
               <NavLink
                 to="/statics"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                aria-label="Statics"
+                title="Statics"
+                className={({isActive})=> isActive? "font-medium tracking-wide text-indigo-700 transition-colors duration-200  hover:text-sky-700" : "font-medium tracking-wide text-gray-700 transition-colors duration-200  hover:text-sky-700" }
               >
                 Statics
               </NavLink>
@@ -58,9 +58,9 @@ export const Nav = () => {
             <li>
               <NavLink
                 to="/blog"
-                aria-label="Product pricing"
-                title="Product pricing"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                aria-label="Blog"
+                title="Blog"
+                className={({isActive})=> isActive? "font-medium tracking-wide text-indigo-700 transition-colors duration-200  hover:text-sky-700" : "font-medium tracking-wide text-gray-700 transition-colors duration-200  hover:text-sky-700" }
               >
                 Blog
               </NavLink>
@@ -142,9 +142,9 @@ export const Nav = () => {
                       <li>
                         <NavLink
                           to="/topics"
-                          aria-label="Our product"
-                          title="Our product"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          aria-label="Topics"
+                          title="Topics"
+                          className={({isActive})=> isActive? "font-medium tracking-wide text-indigo-700 transition-colors duration-200  hover:text-sky-700" : "font-medium tracking-wide text-gray-700 transition-colors duration-200  hover:text-sky-700" }
                         >
                           Topics
                         </NavLink>
@@ -152,9 +152,9 @@ export const Nav = () => {
                       <li>
                         <NavLink
                           to="/statics"
-                          aria-label="Our product"
-                          title="Our product"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          aria-label="Topics"
+                          title="Topics"
+                          className={({isActive})=> isActive? "font-medium tracking-wide text-indigo-700 transition-colors duration-200  hover:text-sky-700" : "font-medium tracking-wide text-gray-700 transition-colors duration-200  hover:text-sky-700" }
                         >
                           Statics
                         </NavLink>
@@ -162,9 +162,9 @@ export const Nav = () => {
                       <li>
                         <NavLink
                           to="/blog"
-                          aria-label="Product pricing"
-                          title="Product pricing"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          aria-label="Blog"
+                          title="Blog"
+                          className={({isActive})=> isActive? "font-medium tracking-wide text-indigo-700 transition-colors duration-200  hover:text-sky-700" : "font-medium tracking-wide text-gray-700 transition-colors duration-200  hover:text-sky-700" }
                         >
                          Blog
                         </NavLink>

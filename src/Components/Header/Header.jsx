@@ -1,6 +1,12 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const getStart = () => {
+    navigate('/blog');
+  }
     return (
         <div>
            
@@ -10,7 +16,7 @@ const Header = () => {
           <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
             <div>
               <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                Brand new
+                Quiz Mania
               </p>
             </div>
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -39,27 +45,27 @@ const Header = () => {
                 </svg>
                 <span className="relative">The</span>
               </span>{' '}
-              quick, brown fox jumps over a lazy dog
+              Best quiz practice website for Web Developers
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque rem aperiam, eaque ipsa quae.
+              Preparing for a fronted Web Developer job? We are here to help you with the most important questions frequently asked on Interview board!
             </p>
           </div>
           <div className="flex items-center sm:justify-center">
-            <button
+                <button
+                  onClick={getStart}
               type="submit"
               className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-700 hover:bg-blue-400 focus:shadow-outline focus:outline-none"
             >
               Get started
             </button>
-            <a
-              href="/"
+            <Link
+              to="/statics"
               aria-label=""
               className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
             >
-              Learn more
-            </a>
+              Learn More
+            </Link>
           </div>
         </div>
       </div>

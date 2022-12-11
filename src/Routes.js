@@ -3,6 +3,7 @@ import Blog from "./Components/Blog/Blog";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import Home from "./Components/Home/Home";
 import Quizes from "./Components/Quizes/Quizes";
+import QuizTopic from "./Components/QuizTopic/QuizTopic";
 import Statics from "./Components/Static/Statics";
 import Root from "./Layouts/Root";
 import { loadData } from "./Utilitis/loadData";
@@ -37,7 +38,6 @@ export const router = createBrowserRouter([
                 path: "/blog",
                 element: <Blog></Blog>
             }
-            
         ]
     }
 ])
